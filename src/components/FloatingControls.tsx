@@ -23,7 +23,7 @@ export const FloatingControls: React.FC<FloatingControlsProps> = ({ onOpenDemoMo
 
       {/* WhatsApp Direct Floating Button */}
       <a
-        href="https://wa.me/201000000000?text=Hello%2C%20I%20am%20interested%20in%20Odoo%20Community%20System%20and%20Managed%20OPEX%20Employee"
+        href="https://wa.me/201229303030?text=Hello%2C%20I%27m%20interested%20in%20the%20Odoo%20Community%20System%20and%20Managed%20OPEX%20Employee.%20Please%20share%20pricing%20and%20availability."
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Contact via WhatsApp"

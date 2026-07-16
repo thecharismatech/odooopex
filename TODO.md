@@ -1,6 +1,13 @@
-- [x] Update server.js SPA fallback to use Express 5-compatible app.use() middleware (remove app.get('*')).
-- [ ] Bump package version/build version if required by repo conventions.
-- [x] Re-run npm run start to verify server boots.
-- [x] Re-run npm run build to ensure build still succeeds.
+# TODO
 
+- [x] Implement ThemeContext (light/dark) with localStorage + system default
+
+- [x] Update App.tsx to remove hard-coded dark wrapper classes and rely on theme
+
+- [x] Update src/index.css with CSS variables for light/dark + make glass styles theme-aware
+
+- [x] Add theme toggle button in Navbar
+
+- [x] Update WhatsApp floating link number to 201229303030 and improve message
+- [x] Verify build/dev runs
 

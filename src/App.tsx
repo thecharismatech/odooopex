@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { ThemeProvider } from './context/ThemeContext';
 import { LanguageProvider } from './context/LanguageContext';
+
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { ValueProps } from './components/ValueProps';
@@ -28,7 +30,7 @@ const MainContent: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0B0F19] text-slate-100 selection:bg-purple-500 selection:text-white relative">
+    <div className="min-h-screen selection:bg-purple-500 selection:text-white relative">
       {/* Navigation */}
       <Navbar onOpenDemoModal={handleOpenDemoModal} />
 
@@ -63,9 +65,11 @@ const MainContent: React.FC = () => {
 
 export function App() {
   return (
-    <LanguageProvider>
-      <MainContent />
-    </LanguageProvider>
+    <ThemeProvider>
+      <LanguageProvider>
+        <MainContent />
+      </LanguageProvider>
+    </ThemeProvider>
   );
 }
 

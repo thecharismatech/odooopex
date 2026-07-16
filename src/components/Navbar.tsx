@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { Layers, Globe, Menu, X, ArrowRight, UserCheck, Sparkles } from 'lucide-react';
+import { ThemeToggle } from './ThemeToggle';
+
 
 interface NavbarProps {
   onOpenDemoModal: (plan?: string) => void;
@@ -82,6 +84,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDemoModal }) => {
               <Globe className="w-4 h-4 text-purple-400" />
               <span>{language === 'en' ? 'عربي' : 'English'}</span>
             </button>
+
+            {/* Theme Toggle Button */}
+            <ThemeToggle />
+
 
             {/* Request Demo / OPEX CTA Button */}
             <button
