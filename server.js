@@ -15,16 +15,14 @@ app.disable('x-powered-by');
 // Serve static assets from the production build
 app.use(express.static(distDir, { index: false }));
 
-// SPA fallback:
+// SPA fallback (Express 5 compatible):
 // Only return index.html for real page navigations.
 // For JS/CSS/assets module requests, return 404 so the browser doesn't receive HTML with wrong MIME type.
-app.get('*', (req, res, next) => {
+app.use((req, res, next) => {
   const accept = req.headers.accept || '';
   const isHtmlNavigation = accept.includes('text/html');
 
-  // Explicitly handle only real browser navigations.
-  // Everything else should be handled by express.static (404 if missing),
-  // to avoid sending index.html as a JS module (wrong MIME type).
+  // Let express.static handle non-HTML requests (404 if missing).
   if (!isHtmlNavigation) {
     return next();
   }
@@ -32,6 +30,7 @@ app.get('*', (req, res, next) => {
   // For any HTML navigation, serve SPA entry.
   return res.sendFile(indexHtml);
 });
+
 
 
 
